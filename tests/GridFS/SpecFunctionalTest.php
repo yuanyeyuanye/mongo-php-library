@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB\Tests\GridFS;
 
@@ -90,7 +90,7 @@ class SpecFunctionalTest extends FunctionalTestCase
      */
     private function assertEquivalentCollections($expectedCollection, $actualCollection, $actualResult)
     {
-        $mi = new MultipleIterator;
+        $mi = new MultipleIterator();
         $mi->attachIterator(new IteratorIterator($expectedCollection->find()));
         $mi->attachIterator(new IteratorIterator($actualCollection->find()));
 
@@ -226,7 +226,7 @@ class SpecFunctionalTest extends FunctionalTestCase
          */
         array_walk_recursive($assert['data'], function(&$value) {
             if ($value === '*actual') {
-                $value .= '_' . new ObjectId;
+                $value .= '_' . new ObjectId();
             }
         });
 

@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 namespace MongoDB\Tests;
 
@@ -44,7 +44,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function getInvalidArrayValues()
     {
-        return [123, 3.14, 'foo', true, new stdClass];
+        return [123, 3.14, 'foo', true, new stdClass()];
     }
 
     /**
@@ -54,7 +54,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function getInvalidBooleanValues()
     {
-        return [123, 3.14, 'foo', [], new stdClass];
+        return [123, 3.14, 'foo', [], new stdClass()];
     }
 
     /**
@@ -74,7 +74,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function getInvalidIntegerValues()
     {
-        return [3.14, 'foo', true, [], new stdClass];
+        return [3.14, 'foo', true, [], new stdClass()];
     }
 
     /**
@@ -84,7 +84,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function getInvalidReadConcernValues()
     {
-        return [123, 3.14, 'foo', true, [], new stdClass, new ReadPreference(ReadPreference::RP_PRIMARY), new WriteConcern(1)];
+        return [123, 3.14, 'foo', true, [], new stdClass(), new ReadPreference(ReadPreference::RP_PRIMARY), new WriteConcern(1)];
     }
 
     /**
@@ -94,7 +94,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function getInvalidReadPreferenceValues()
     {
-        return [123, 3.14, 'foo', true, [], new stdClass, new ReadConcern, new WriteConcern(1)];
+        return [123, 3.14, 'foo', true, [], new stdClass(), new ReadConcern(), new WriteConcern(1)];
     }
 
     /**
@@ -104,7 +104,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function getInvalidStringValues()
     {
-        return [123, 3.14, true, [], new stdClass];
+        return [123, 3.14, true, [], new stdClass()];
     }
 
     /**
@@ -114,7 +114,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected function getInvalidWriteConcernValues()
     {
-        return [123, 3.14, 'foo', true, [], new stdClass, new ReadConcern, new ReadPreference(ReadPreference::RP_PRIMARY)];
+        return [123, 3.14, 'foo', true, [], new stdClass(), new ReadConcern(), new ReadPreference(ReadPreference::RP_PRIMARY)];
     }
 
     /**

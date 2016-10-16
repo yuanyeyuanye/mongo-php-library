@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB\Tests\Collection;
 
@@ -30,7 +30,7 @@ class UpdateFunctionalTest extends FunctionalTestCase
 
         $this->assertInstanceOf('MongoDB\UpdateResult', $result);
         $this->assertSame(1, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(1, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(1, $result->getModifiedCount());
         $this->assertSame(0, $result->getUpsertedCount());
         $this->assertNull($result->getUpsertedId());
 
@@ -56,7 +56,7 @@ class UpdateFunctionalTest extends FunctionalTestCase
 
         $this->assertInstanceOf('MongoDB\UpdateResult', $result);
         $this->assertSame(2, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(2, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(2, $result->getModifiedCount());
         $this->assertSame(0, $result->getUpsertedCount());
         $this->assertNull($result->getUpsertedId());
 
@@ -82,7 +82,7 @@ class UpdateFunctionalTest extends FunctionalTestCase
 
         $this->assertInstanceOf('MongoDB\UpdateResult', $result);
         $this->assertSame(0, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(0, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(0, $result->getModifiedCount());
         $this->assertSame(1, $result->getUpsertedCount());
         $this->assertSame(5, $result->getUpsertedId());
 
@@ -109,7 +109,7 @@ class UpdateFunctionalTest extends FunctionalTestCase
 
         $this->assertInstanceOf('MongoDB\UpdateResult', $result);
         $this->assertSame(0, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(0, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(0, $result->getModifiedCount());
         $this->assertSame(1, $result->getUpsertedCount());
         $this->assertInstanceOf('MongoDB\BSON\ObjectId', $result->getUpsertedId());
 

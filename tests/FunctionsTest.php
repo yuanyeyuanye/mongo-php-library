@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 namespace MongoDB\Tests;
 
@@ -21,7 +21,7 @@ class FunctionsTest extends \PHPUnit_Framework_TestCase
     public function provideReadConcernsAndDocuments()
     {
         return [
-            [ new ReadConcern, (object) [] ],
+            [ new ReadConcern(), (object) [] ],
             [ new ReadConcern(ReadConcern::LOCAL), (object) ['level' => ReadConcern::LOCAL] ],
             [ new ReadConcern(ReadConcern::MAJORITY), (object) ['level' => ReadConcern::MAJORITY] ],
         ];

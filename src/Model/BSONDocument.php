@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB\Model;
 
@@ -40,7 +40,7 @@ class BSONDocument extends ArrayObject implements JsonSerializable, Serializable
      */
     public static function __set_state(array $properties)
     {
-        $document = new static;
+        $document = new static();
         $document->exchangeArray($properties);
 
         return $document;

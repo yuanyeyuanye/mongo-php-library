@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 namespace MongoDB\Tests;
 
@@ -30,7 +30,7 @@ class BSONDocumentTest extends TestCase
             'foo' => 'bar',
             'array' => new BSONArray([1, 2, 3]),
             'object' => new BSONDocument([1, 2, 3]),
-            'nested' => new BSONDocument([new BSONDocument([new BSONDocument])]),
+            'nested' => new BSONDocument([new BSONDocument([new BSONDocument()])]),
         ]);
 
         $expectedJson = '{"foo":"bar","array":[1,2,3],"object":{"0":1,"1":2,"2":3},"nested":{"0":{"0":{}}}}';

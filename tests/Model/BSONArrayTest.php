@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 namespace MongoDB\Tests;
 
@@ -22,7 +22,7 @@ class BSONArrayTest extends TestCase
             'foo',
             new BSONArray(['foo' => 1, 'bar' => 2, 'baz' => 3]),
             new BSONDocument(['foo' => 1, 'bar' => 2, 'baz' => 3]),
-            new BSONArray([new BSONArray([new BSONArray])]),
+            new BSONArray([new BSONArray([new BSONArray()])]),
         ]);
 
         $expectedJson = '["foo",[1,2,3],{"foo":1,"bar":2,"baz":3},[[[]]]]';

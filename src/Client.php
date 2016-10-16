@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB;
 
@@ -157,7 +157,7 @@ class Client
     {
         $options += ['typeMap' => $this->typeMap];
 
-        return new Collection($this->manager, $databaseName, $collectionName, $options);
+        return new \MongoDB\Collection($this->manager, $databaseName, $collectionName, $options);
     }
 
     /**

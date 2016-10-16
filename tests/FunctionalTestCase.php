@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 namespace MongoDB\Tests;
 
@@ -80,7 +80,7 @@ abstract class FunctionalTestCase extends TestCase
         return $this->manager->selectServer(new ReadPreference(ReadPreference::RP_PRIMARY));
     }
 
-    protected function getServerVersion(ReadPreference $readPreference = null)
+    protected function getServerVersion(?ReadPreference $readPreference = null)
     {
         $cursor = $this->manager->executeCommand(
             $this->getDatabaseName(),

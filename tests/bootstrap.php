@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     // Dependencies were installed with Composer and this is the main project

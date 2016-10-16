@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 namespace MongoDB\Tests\Collection\CrudSpec;
 

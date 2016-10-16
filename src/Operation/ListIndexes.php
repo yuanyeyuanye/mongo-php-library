@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB\Operation;
 
@@ -89,7 +89,7 @@ class ListIndexes implements Executable
              * empty iterator instead of throwing.
              */
             if ($e->getCode() === self::$errorCodeNamespaceNotFound || $e->getCode() === self::$errorCodeDatabaseNotFound) {
-                return new IndexInfoIteratorIterator(new EmptyIterator);
+                return new IndexInfoIteratorIterator(new EmptyIterator());
             }
 
             throw $e;

@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB\Tests\Collection;
 
@@ -67,7 +67,7 @@ class BulkWriteFunctionalTest extends FunctionalTestCase
 
         $this->assertInstanceOf('MongoDB\BulkWriteResult', $result);
         $this->assertSame(5, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(5, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(5, $result->getModifiedCount());
         $this->assertSame(2, $result->getUpsertedCount());
 
         $upsertedIds = $result->getUpsertedIds();
@@ -129,7 +129,7 @@ class BulkWriteFunctionalTest extends FunctionalTestCase
         $this->assertSame([2 => 4], $result->getInsertedIds());
 
         $this->assertSame(3, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(3, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(3, $result->getModifiedCount());
         $this->assertSame(1, $result->getUpsertedCount());
         $this->assertSame([4 => 4], $result->getUpsertedIds());
 

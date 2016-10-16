@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 namespace MongoDB\Tests;
 
@@ -35,7 +35,7 @@ class IndexInputTest extends TestCase
 
     public function provideInvalidFieldOrderValues()
     {
-        return $this->wrapValuesForDataProvider([true, [], new stdClass]);
+        return $this->wrapValuesForDataProvider([true, [], new stdClass()]);
     }
 
     /**

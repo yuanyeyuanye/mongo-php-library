@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 namespace MongoDB\Tests\Collection\CrudSpec;
 
@@ -27,7 +27,7 @@ class UpdateManyFunctionalTest extends FunctionalTestCase
 
         $result = $this->collection->updateMany($filter, $update);
         $this->assertSame(2, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(2, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(2, $result->getModifiedCount());
 
         $expected = [
             ['_id' => 1, 'x' => 11],
@@ -45,7 +45,7 @@ class UpdateManyFunctionalTest extends FunctionalTestCase
 
         $result = $this->collection->updateMany($filter, $update);
         $this->assertSame(1, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(1, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(1, $result->getModifiedCount());
 
         $expected = [
             ['_id' => 1, 'x' => 12],
@@ -63,7 +63,7 @@ class UpdateManyFunctionalTest extends FunctionalTestCase
 
         $result = $this->collection->updateMany($filter, $update);
         $this->assertSame(0, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(0, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(0, $result->getModifiedCount());
 
         $expected = [
             ['_id' => 1, 'x' => 11],
@@ -82,7 +82,7 @@ class UpdateManyFunctionalTest extends FunctionalTestCase
 
         $result = $this->collection->updateMany($filter, $update, $options);
         $this->assertSame(0, $result->getMatchedCount());
-        $this->omitModifiedCount or $this->assertSame(0, $result->getModifiedCount());
+        $this->omitModifiedCount || $this->assertSame(0, $result->getModifiedCount());
         $this->assertSame(4, $result->getUpsertedId());
 
         $expected = [

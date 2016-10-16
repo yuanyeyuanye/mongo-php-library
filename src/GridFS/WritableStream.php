@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB\GridFS;
 
@@ -55,7 +55,7 @@ class WritableStream
     public function __construct(CollectionWrapper $collectionWrapper, $filename, array $options = [])
     {
         $options += [
-            '_id' => new ObjectId,
+            '_id' => new ObjectId(),
             'chunkSizeBytes' => self::$defaultChunkSizeBytes,
         ];
 

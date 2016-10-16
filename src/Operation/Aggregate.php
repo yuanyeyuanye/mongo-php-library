@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB\Operation;
 
@@ -223,7 +223,7 @@ class Aggregate implements Executable
         if ($this->options['useCursor']) {
             $cmd['cursor'] = isset($this->options["batchSize"])
                 ? ['batchSize' => $this->options["batchSize"]]
-                : new stdClass;
+                : new stdClass();
         }
 
         return new Command($cmd);

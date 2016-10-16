@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB\Model;
 
@@ -27,7 +27,7 @@ class BSONArray extends ArrayObject implements JsonSerializable, Serializable, U
      */
     public static function __set_state(array $properties)
     {
-        $array = new static;
+        $array = new static();
         $array->exchangeArray($properties);
 
         return $array;

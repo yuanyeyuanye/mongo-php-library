@@ -1,4 +1,4 @@
-<?php
+<?hh // decl
 
 namespace MongoDB;
 
@@ -735,6 +735,6 @@ class Collection
             'writeConcern' => $this->writeConcern,
         ];
 
-        return new Collection($this->manager, $this->databaseName, $this->collectionName, $options);
+        return new \MongoDB\Collection($this->manager, $this->databaseName, $this->collectionName, $options);
     }
 }
